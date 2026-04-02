@@ -10,13 +10,13 @@ useEffect(() => {
 }, []);
 
 const fetchIssuedBooks = async () => {
-    const res = await axios.get("http://localhost:8080/issuedBooks");
+    const res = await axios.get("https://booknest-backend-6wdd.onrender.com/issuedBooks");
     setBooks(res.data);
 };
 
 const returnBook = async (id) => {
     try {
-        await axios.put(`http://localhost:8080/issuedBooks/return/${id}`);
+        await axios.put(`https://booknest-backend-6wdd.onrender.com/issuedBooks/return/${id}`);
         alert("Book Returned ✅");
         fetchIssuedBooks();
     } catch (error) {
