@@ -1,0 +1,37 @@
+.falling-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* allows clicks through the animation */
+  overflow: hidden;
+  z-index: 0; /* behind content */
+}
+
+.falling-book {
+  position: absolute;
+  top: -50px;
+  background: url('https://i.ibb.co/Z2QvZ0P/book-icon.png') no-repeat center center;
+  background-size: cover;
+  border-radius: 3px;
+  opacity: 0.7;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
