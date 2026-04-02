@@ -24,7 +24,7 @@ fetchBooks();
 },[]);
 
 const fetchBooks = async ()=>{
-const res = await axios.get("http://localhost:8080/books");
+const res = await axios.get("https://booknest-backend-6wdd.onrender.com/books");
 setBooks(res.data);
 };
 
@@ -35,7 +35,7 @@ alert("Enter all fields");
 return;
 }
 
-await axios.post("http://localhost:8080/books",{
+await axios.post("https://booknest-backend-6wdd.onrender.com/books",{
 title,
 author,
 price
@@ -57,7 +57,7 @@ setPrice(book.price);
 
 const updateBook = async ()=>{
 
-await axios.put(`http://localhost:8080/books/${editingBookId}`,{
+await axios.put(`https://booknest-backend-6wdd.onrender.com/books/${editingBookId}`,{
 title,
 author,
 price
@@ -72,7 +72,7 @@ fetchBooks();
 };
 
 const deleteBook = async(id)=>{
-await axios.delete(`http://localhost:8080/books/${id}`);
+await axios.delete(`https://booknest-backend-6wdd.onrender.com/books/${id}`);
 fetchBooks();
 };
 
@@ -99,7 +99,7 @@ alert("Enter student details");
 return;
 }
 
-await axios.post("http://localhost:8080/issuedBooks/issue",{
+await axios.post("https://booknest-backend-6wdd.onrender.com/issuedBooks/issue",{
 
 bookId:selectedBook.id,
 studentName:studentName,
